@@ -127,25 +127,26 @@ input {
   box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.07);
   border-radius: 20px;
 }
+.scan-result__header__logowrapper {
+  display: flex;
+  align-items: center;
+}
 .scan-result__header__title {
   font-size: 1.2rem;
-  line-height: 0.6rem;
+  line-height: 1.5rem;
 }
 .scan-result__header__description {
   font-weight: 400;
 }
 .scan-result .row {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 9rem auto;
 }
 .scan-result .column {
   padding: 10px;
   font-weight: 300;
 }
 .scan-result .column:first-child {
-  width: 120px;
   font-weight: 600;
 }
 
