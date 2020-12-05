@@ -104,9 +104,14 @@ input {
   border-radius: 20px;
 
   &__header {
+    &__logowrapper {
+      display: flex;
+      align-items: center;
+    }
+
     &__title {
       font-size: 1.2rem;
-      line-height: 0.6rem;
+      line-height: 1.5rem;
     }
 
     &__description {
@@ -115,10 +120,8 @@ input {
   }
 
   .row {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 9rem auto;
   }
 
   .column {
@@ -126,7 +129,6 @@ input {
     font-weight: 300;
 
     &:first-child {
-      width: 120px;
       font-weight: 600;
     }
   }

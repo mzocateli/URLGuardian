@@ -9,7 +9,7 @@ let loader = document.getElementById('loader');
 function htmlResultado(urlConsultada, ameacas, descricoes) {
 return `
 <header class="scan-result__header row">
-<div class="column">
+<div class="scan-result__header__logowrapper column">
     <img src="images/alert-icon.png" alt="Danger icon"/>
 </div>
 
@@ -41,12 +41,12 @@ return `
 function htmlMensagem(mensagem, icone){ 
 return `
 <div class="scan-result__header row">
-<div class="column">
+<div class="scan-result__header__logowrapper column">
     <img src="${icone !== 'sucesso' ? 'images/alert-icon.png' : 'images/success-icon.png'}"/>
 </div>
 
 <div class="column">
-    <p class="scan-result__header__description" style="font-size: 28px">${mensagem}</p>
+    <p class="scan-result__header__description" style="font-size: 28px; font-weight: 300;">${mensagem}</p>
 </div>
 </div>
 `
