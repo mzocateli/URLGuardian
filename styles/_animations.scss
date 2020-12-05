@@ -1,0 +1,48 @@
+@import 'constants/colors';
+
+// Animated Loading Symbol
+
+.loading-dual-ring {
+  display: block;
+  width: 1em;
+  height: 1em;
+  padding: 0px 5px 5px 0;
+
+  &:after {
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid $color-green-hover;
+    border-color: $color-green-hover transparent $color-green-hover transparent;
+    animation: loading-dual-ring 1.2s linear infinite;
+  }
+}
+
+@keyframes loading-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Ripple Effect from Material Design
+
+.ripple-effect {
+  background-position: center;
+  transition: background 0.9s;
+
+  &:hover {
+    background: $color-green-hover radial-gradient(circle, transparent 1%, $color-green-hover 1%)
+      center/15000%;
+  }
+
+  &:active {
+    background-color: $color-green;
+    background-size: 100%;
+    transition: background 0s;
+  }
+}
