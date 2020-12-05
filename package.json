@@ -1,0 +1,21 @@
+{
+  "name": "urlguardian",
+  "version": "1.0.0",
+  "description": "Este projeto utiliza a _Safe Browsing Lookup API_ da Google para verificar se um website é seguro ou não",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "npm run transpile-scss",
+    "transpile-scss" : "sass --watch styles/style.scss styles/style.css --no-source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tenebrarum777/URLGuardian.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tenebrarum777/URLGuardian/issues"
+  },
+  "homepage": "https://github.com/Tenebrarum777/URLGuardian#readme"
+}
