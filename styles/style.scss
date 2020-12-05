@@ -1,52 +1,137 @@
-body,html {
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
+@use 'animations';
+@import "constants/colors";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+@mixin horizontal-padding($padding) {
+  padding-right: $padding;
+  padding-left: $padding;
+}
+
+body,
+html {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  background-color: $color-website-background;
+}
+
+button,
+input {
+  outline: none;
+  border: 0;
 }
 
 .header {
-    height: 3.5rem;
-    background-color: #1e8e3e;
+  height: auto;
 
-    &__item {
-        height: calc(100% - 0.125rem - 0.25rem);
-        margin: 0 0.25rem 0;
-        padding: 0.125rem;
-        display: flex;
-        align-items: center;
-    }
+  &__logocontainer {
+    margin-top: 20vh;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
 
-    &__text{
-        font-size: 2rem;
-        color: #f0f8ff;
+    &__logo {
+      font-size: 3rem;
+      color: #000;
     }
+  }
 }
 
-.container{
-    margin: 3rem;
-
-    &__article{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+.container {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 15px;
+  max-width: 700px;
 }
 
-.article {
-    &__input{
-        width: 100%;
-        border-radius: 5px;
-        line-height: 2rem;
-        font-size: 2rem;
+.searchbar {
+  $height-searchbar: 2.9rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: auto;
+  margin-bottom: 3rem;
+
+  &__input {
+    @include horizontal-padding(1rem);
+    flex: 1;
+    height: $height-searchbar;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fff;
+    border: 1px solid #d2d2d2;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.07);
+    margin-right: 1.3rem;
+  }
+
+  &__button {
+    @include horizontal-padding(2rem);
+    flex: 0;
+    height: $height-searchbar;
+    border-radius: 8px;
+    box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.25);
+    font-weight: 600;
+    color: #fff;
+    font-size: 0.9rem;
+    background-color: $color-green;
+    cursor: pointer;
+  }
+}
+
+.scan-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__loading {
+    font-size: 1rem;
+    margin-right: 0.8rem;
+  }
+}
+
+.scan-result {
+  padding: 1.5rem 5rem;
+  background: #f7f7f7;
+  border: 1px solid #d2d2d2;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.07);
+  border-radius: 20px;
+
+  &__header {
+    &__title {
+      font-size: 1.2rem;
+      line-height: 0.6rem;
     }
-    
-    &__button{
-        margin-top: 1rem;
-        width: 100%;
-        border-radius: 5px;
-        font-size: 1.5rem;
-        color: #f0f8ff;
-        background-color: #1e90ff;
+
+    &__description {
+      font-weight: 400;
     }
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-wrap: wrap;
+  }
+
+  .column {
+    padding: 10px;
+    font-weight: 300;
+
+    &:first-child {
+      width: 120px;
+      font-weight: 600;
+    }
+  }
+}
+
+.hidden {
+  display: none;
 }
