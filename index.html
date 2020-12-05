@@ -8,17 +8,54 @@
     <script src="scripts/main.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="header__item">
-            <span class="header__text">URLGuardian</span>
+    <header class="header container">
+        <div class="header__logocontainer">
+            <span class="header__logocontainer__logo">URL Guardian</span>
         </div>
     </header>
 
     <main class="container">
-        <article class="container__article">
-            <input class="article__input" type="text">
-            <button class="article__button">Pesquisar</button>
+        <article class="searchbar">
+            <input class="searchbar__input" type="text" placeholder="Cole aqui o endereço do site..." autofocus>
+            <button class="searchbar__button ripple-effect">Checar</button>
         </article>
+        
+        <div class="scan-progress hidden">
+            <div class="scan-progress__loading">
+                <div class="loading-dual-ring"></div>
+            </div>
+            <span class="scan-progress__text">Verificando a segurança do site...</span>            
+        </div>
+
+        <div class="scan-result hidden">
+            <header class="scan-result__header row">
+                <div class="column">
+                    <img src="images/alert-icon.png" alt="Danger icon"/>
+                </div>
+
+                <div class="column">
+                    <h2 class="scan-result__header__title">Acesso Bloqueado</h2>
+                    <p class="scan-result__header__description">O site analisado apresenta ameaça de segurança.</p>
+                </div>
+            </header>
+
+            <div class="scan-result__body">
+                <div class="row">
+                    <div class="column">Endereço</div>
+                    <div class="column">{website-url}</div>
+                </div>
+
+                <div class="row">
+                    <div class="column">Tipo de ameaça</div>
+                    <div class="column">{threat-type}</div>
+                </div>
+
+                <div class="row">
+                    <div class="column">Impacto</div>
+                    <div class="column">{threat-danger}</div>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 </html>
