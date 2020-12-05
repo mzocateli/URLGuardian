@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL Guardian</title>
     <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/main.js"></script>
 </head>
 <body>
     <header class="header container">
@@ -16,46 +15,21 @@
 
     <main class="container">
         <article class="searchbar">
-            <input class="searchbar__input" type="text" placeholder="Cole aqui o endereço do site..." autofocus>
-            <button class="searchbar__button ripple-effect">Checar</button>
+            <input id="userInput" class="searchbar__input" type="text" placeholder="Cole aqui o endereço do site..." autofocus>
+            <button class="searchbar__button ripple-effect" onclick="consultaURL()">Checar</button>
         </article>
         
-        <div class="scan-progress hidden">
+        <div id="loader" class="scan-progress hidden">
             <div class="scan-progress__loading">
                 <div class="loading-dual-ring"></div>
             </div>
             <span class="scan-progress__text">Verificando a segurança do site...</span>            
         </div>
 
-        <div class="scan-result hidden">
-            <header class="scan-result__header row">
-                <div class="column">
-                    <img src="images/alert-icon.png" alt="Danger icon"/>
-                </div>
-
-                <div class="column">
-                    <h2 class="scan-result__header__title">Acesso Bloqueado</h2>
-                    <p class="scan-result__header__description">O site analisado apresenta ameaça de segurança.</p>
-                </div>
-            </header>
-
-            <div class="scan-result__body">
-                <div class="row">
-                    <div class="column">Endereço</div>
-                    <div class="column">{website-url}</div>
-                </div>
-
-                <div class="row">
-                    <div class="column">Tipo de ameaça</div>
-                    <div class="column">{threat-type}</div>
-                </div>
-
-                <div class="row">
-                    <div class="column">Impacto</div>
-                    <div class="column">{threat-danger}</div>
-                </div>
-            </div>
+        <div id="divResultado" class="scan-result hidden">
+            
         </div>
     </main>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
