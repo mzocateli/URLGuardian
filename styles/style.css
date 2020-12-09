@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@800&display=swap");
 .loading-dual-ring {
   display: block;
   width: 1em;
@@ -61,8 +62,9 @@ input {
   justify-content: center;
 }
 .header__logocontainer__logo {
-  font-size: 3rem;
+  font-size: 4rem;
   color: #000;
+  font-family: "Exo", sans-serif;
 }
 
 .container {
